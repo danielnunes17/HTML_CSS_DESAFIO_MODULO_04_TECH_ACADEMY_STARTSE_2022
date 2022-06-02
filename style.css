@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&family=Prata&family=Texturina:ital,opsz,wght@0,12..72,100;0,12..72,200;0,12..72,400;0,12..72,700;1,12..72,100&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Prata', Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px 5px red;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color: #ffffff
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 3rem;
+    font-weight: 200;
+    letter-spacing: 0.06rem;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.section-title {
+    border-radius: 10px;
+    width: 1100px;
+    padding: 5%;
+    font-size: 3rem;
+    font-weight: 5000;
+    color: rgba(157, 8, 8, 0.733);
+    background-color: rgba(32, 87, 1, 0.733);
+    margin-bottom: -100px;
+    margin-top: -250px;
+    letter-spacing: 0.0rem;
+    text-align: margin-bottom;
+}
+
+/* Seção de apresentação */
+
+#presentation {
+    background-image: url(./backgroundporto.jpg);
+    filter: saturate(120%);
+    filter: contrast(128%);
+    background-size: cover;
+    background-position: top left;
+    position: relative;
+    z-index: 1;
+}
+
+#presentation h1 {
+    display: block;
+    width: fit-content;
+    font-size: 6rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(1) {
+    animation-delay: .8s;
+}
+
+#presentation h1:nth-child(2) {
+    animation-delay: 1.8s;
+}
+
+#presentation h1:nth-child(3) {
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 2.8s;
+}
+
+#presentation .cta {
+    position: absolute;
+    text-decoration: none;
+    text-shadow: none;
+    display: inline-grid;
+    padding: 10px 20px;
+    color: rgb(242, 255, 0);
+    background-color: rgba(61, 224, 20, 0.448);
+    border: 2px solid rgba(39, 99, 6, 0.612);
+    font-size: 27px;
+    text-transform: inherit;
+    letter-spacing: .1rem;
+    margin-top: 65px;
+    transition: .5s ease;
+    transition-property: background-color, color;
+
+}
+
+#presentation .cta:hover {
+    color: white;
+    font-weight: 800;
+    background-color: rgba(137, 18, 5, 0.782);
+}
+
+#presentation h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: rgba(255, 0, 0, 0.521);
+
+}
+
+#presentation h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+
+#presentation h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+#presentation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(223, 255, 127, 0.789);
+    opacity: 0.1;
+    z-index: -3;
+}
+
+/* Seção dos locais */
+
+#places .places {
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 14%;
+    padding: 0px 0px;
+
+}
+
+#places .places-header h1 {
+    margin-bottom: 0px;
+}
+
+#places .all-places {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#places .place-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#places .place-info {
+    padding: 50px;
+    flex-basis: 80%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #049138 10%, #c60d00 100%);
+    color: white;
+}
+
+#places .place-info h1 {
+    font-size: 6rem;
+    font-weight: 150;
+}
+
+#places .place-info h2 {
+    font-size: 3rem;
+    font-weight: 100;
+    margin-top: 50px;
+}
+
+#places .place-img {
+    flex-basis: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+#places .place-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+#places .place-img img {
+    transition: 1s ease transform;
+}
+
+#places .place-item:hover .place-img img {
+    transform: scale(1.1);
+}
+
+/* Keyframes */
+
+@keyframes text_reveal {
+    100% {
+        color: rgb(242, 255, 0);
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: rgb(242, 255, 0);
+        font-weight: 500px;
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%
+    }
+}
+
+/* Media Query */
+@media only screen and (min-width: 500px) {
+    #places .place-item {
+        flex-direction: row;
+        height: 760px;
+        margin: 10;
+        width: 100%;
+        border-radius: 1;
+    }
+
+    #places .all-places .place-info {
+        height: 100%
+    }
+
+    #places .all-places .place-img {
+        height: 100%
+    }
+
+    #places .place-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+
+}
